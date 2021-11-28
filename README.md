@@ -1,25 +1,46 @@
-# Dunde's GitHub React blog
-- React를 이용해 만든 Github blog 입니다.
-- [블로그](https://dunde1.github.io/)
+# Getting Started with Create React App
 
-## 제작 과정
-- `npx create-react-app {repository}` 명령어로 react app 생성.
-- `package.json` 파일 수정.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-    ```
-    ...
-    "scripts": {
-        ...
-        "predeploy": "npm run build",   //추가
-        "deploy": "gh-pages -d build"   //추가
-    },
-    ...
-    "homepage": "http://{GITHUB_ID}.github.io/"  //추가
-    }
-    ```
+## Available Scripts
 
-- `npm run deploy` 명령어 실행.
-    - 앞으로 이 명령어를 통해 업데이트 후 최신버전으로 바꾸어 주면 된다.
-- github repository에서 `Settings → Pages → Source`에서 `Branch: gh-pages` `/(root)` 설정 후 Save
+In the project directory, you can run:
 
-    <img src="https://user-images.githubusercontent.com/75592009/137745752-74d069ab-2f83-4bde-b4b9-86be85c09b06.PNG" width="500px" height="500px">
+### `yarn start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `yarn test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
