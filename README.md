@@ -20,6 +20,7 @@
 
 - `npm run deploy` 명령어 실행.
     - 앞으로 이 명령어를 통해 업데이트 후 최신버전으로 바꾸어 주면 된다.
+    - 만약 `'gh-pages'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다`라는 오류가 발생할 경우 `npm i gh-pages`를 통해 설치하면 된다.
 - github repository에서 `Settings → Pages → Source`에서 `Branch: gh-pages` `/(root)` 설정 후 Save
 
     <img src="https://user-images.githubusercontent.com/75592009/137745752-74d069ab-2f83-4bde-b4b9-86be85c09b06.PNG" width="500px" height="500px">
