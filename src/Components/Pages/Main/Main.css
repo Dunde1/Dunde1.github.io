@@ -4,6 +4,8 @@
   justify-content: flex-start;
   align-items: center;
 
+  background-color: rgb(230, 230, 230);
+
   width: 100vw;
   height: 100vh;
 }
@@ -11,10 +13,6 @@
 .Main-image {
   width: 700px;
   height: 300px;
-
-  border: 5px solid rgb(150, 255, 180);
-  border-radius: 10px;
-  box-sizing: border-box;
 
   margin: 10px 0px;
 }
@@ -26,10 +24,6 @@
 
   width: 100%;
   height: 50px;
-
-  border: 5px solid rgb(150, 255, 180);
-  border-radius: 10px;
-  box-sizing: border-box;
 
   margin-bottom: 15px;
 }
@@ -53,7 +47,7 @@
 }
 
 .search-button:hover {
-  background-color: aquamarine;
+  background-color: rgb(100, 215, 175);
   border-radius: 20px;
 }
 
@@ -104,9 +98,21 @@
   width: 200px;
   height: 200px;
 
+  margin: 10px;
+}
+
+.box-outter {
+  background-color: white;
+
   border: 5px solid rgb(150, 255, 180);
   border-radius: 10px;
   box-sizing: border-box;
 
-  margin: 10px;
+  transition: all 0.3s;
+}
+
+.box-outter:hover {
+  border: 5px solid rgb(130, 170, 255);
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }

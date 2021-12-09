@@ -1,8 +1,9 @@
+import MainContents from './MainContents';
 import './Main.css';
 
 const Search = () => {
   return (
-    <div className="Main-search">
+    <div className="Main-search box-outter">
       <button className="search-button">
         <img src="/search.svg" width="20px" height="20px" alt="search button" />
       </button>
@@ -11,20 +12,14 @@ const Search = () => {
   );
 };
 
-const Contents = () => {
-  const tmp = <div className="content" />;
-
-  return <section className="Main-contents">{[tmp, tmp, tmp, tmp]}</section>;
-};
-
 const Main = () => {
   return (
     <div className="Main">
       <section className="Main-header">
-        <img className="Main-image" src="/main.png" alt="main hero image" />
+        <img className="Main-image box-outter" src="/main.png" alt="main hero image" />
         <Search />
       </section>
-      <Contents />
+      <MainContents />
     </div>
   );
 };
