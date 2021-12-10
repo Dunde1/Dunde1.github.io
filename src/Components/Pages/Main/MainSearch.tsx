@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { posts } from './MainContents';
 import pageInfo from './pageInfo.json';

@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <div className="Main">
       <section className="Main-header">
-        <img className="Main-image box-outter" src="/main.png" alt="main hero image" />
+        <img className="Main-image box-outter" src="/main.png" alt="main hero" />
         <MainSearch />
       </section>
       <MainContents />
