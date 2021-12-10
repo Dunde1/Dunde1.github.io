@@ -12,6 +12,11 @@ const MainSearchInput = ({}) => {
       .split(' ')
       .filter((text) => text !== '');
 
+    if (parsingTexts.length === 0) {
+      setPostPages(pageInfo);
+      return;
+    }
+
     const newPostPages = pageInfo.filter((page) => {
       if (
         parsingTexts.findIndex((text) => {
