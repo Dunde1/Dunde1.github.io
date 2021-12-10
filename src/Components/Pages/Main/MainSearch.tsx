@@ -54,7 +54,7 @@ const MainSearch = () => {
           alert('not yet');
         }}
       >
-        <img src="/search.svg" width="20px" height="20px" alt="search button" />
+        <img src="/icons/search.svg" width="20px" height="20px" alt="search button" />
       </button>
       <MainSearchInput />
     </div>
