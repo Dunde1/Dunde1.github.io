@@ -1,0 +1,168 @@
+.loading-rings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  background: black;
+}
+
+.container {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  top: -30px;
+}
+
+.container .ring {
+  position: relative;
+
+  width: 150px;
+  height: 150px;
+
+  border: 4px solid transparent;
+  border-radius: 50%;
+
+  margin: -35px;
+}
+
+.container .ring::before {
+  content: '';
+  position: absolute;
+
+  width: 15px;
+  height: 15px;
+
+  border-radius: 50%;
+}
+
+.container .ring:nth-child(2),
+.container .ring:nth-child(4) {
+  top: 66.66px;
+}
+
+/* 첫번째 링 설정 */
+.container .ring:nth-child(1) {
+  border-top: 4px solid rgb(0, 100, 255);
+  border-left: 4px solid rgba(0, 100, 255, 0.5);
+
+  animation: rotate-rings 1s linear infinite;
+}
+
+.container .ring:nth-child(1)::before {
+  top: 12px;
+  right: 12px;
+
+  background: rgb(0, 100, 255);
+  box-shadow: 0 0 0 5px rgba(0, 100, 255, 0.5), 0 0 0 10px rgba(0, 100, 255, 0.2), 0 0 0 20px rgba(0, 100, 255, 0.1),
+    0 0 0 50px rgba(0, 100, 255, 0.03);
+}
+
+/* 두번째 링 설정 */
+.container .ring:nth-child(2) {
+  border-right: 4px solid rgb(255, 230, 0);
+  border-top: 4px solid rgba(255, 230, 0, 0.5);
+
+  animation: rotate-rings 1.3s linear infinite;
+}
+
+.container .ring:nth-child(2)::before {
+  bottom: 12px;
+  right: 12px;
+
+  background: rgb(255, 230, 0);
+  box-shadow: 0 0 0 5px rgba(255, 230, 0, 0.5), 0 0 0 10px rgba(255, 230, 0, 0.2), 0 0 0 20px rgba(255, 230, 0, 0.1),
+    0 0 0 50px rgba(255, 230, 0, 0.03);
+}
+
+/* 세번째 링 설정 */
+.container .ring:nth-child(3) {
+  border-bottom: 4px solid rgb(180, 180, 180);
+  border-right: 4px solid rgba(180, 180, 180, 0.5);
+
+  animation: rotate-rings 1.5s linear infinite;
+}
+
+.container .ring:nth-child(3)::before {
+  bottom: 12px;
+  left: 12px;
+
+  background: black;
+  box-shadow: 0 0 0 5px rgba(180, 180, 180, 0.5), 0 0 0 10px rgba(180, 180, 180, 0.2), 0 0 0 20px rgba(180, 180, 180, 0.1),
+    0 0 0 50px rgba(180, 180, 180, 0.03);
+}
+
+/* 네번째 링 설정 */
+.container .ring:nth-child(4) {
+  border-left: 4px solid rgb(0, 170, 25);
+  border-bottom: 4px solid rgba(0, 170, 25, 0.5);
+
+  animation: rotate-rings 1.1s linear infinite;
+}
+
+.container .ring:nth-child(4)::before {
+  top: 12px;
+  left: 12px;
+
+  background: rgb(0, 170, 25);
+  box-shadow: 0 0 0 5px rgba(0, 170, 25, 0.5), 0 0 0 10px rgba(0, 170, 25, 0.2), 0 0 0 20px rgba(0, 170, 25, 0.1), 0 0 0 50px rgba(0, 170, 25, 0.03);
+}
+
+/* 다섯번째 링 설정 */
+.container .ring:nth-child(5) {
+  border-top: 4px solid rgb(200, 0, 0);
+  border-left: 4px solid rgba(200, 0, 0, 0.5);
+
+  animation: rotate-rings 1.4s linear infinite;
+}
+
+.container .ring:nth-child(5)::before {
+  top: 12px;
+  right: 12px;
+
+  background: rgb(200, 0, 0);
+  box-shadow: 0 0 0 5px rgba(200, 0, 0, 0.5), 0 0 0 10px rgba(200, 0, 0, 0.2), 0 0 0 20px rgba(200, 0, 0, 0.1), 0 0 0 50px rgba(200, 0, 0, 0.03);
+}
+
+@keyframes rotate-rings {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container p {
+  position: absolute;
+
+  color: white;
+  font-size: 1.5em;
+  font-family: consolas;
+
+  bottom: -180px;
+}
+
+.go-to-youtube {
+  position: absolute;
+  top: 250px;
+
+  color: beige;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+
+  transition: all 0.3s;
+}
+
+.go-to-youtube:hover {
+  font-size: 35px;
+  text-shadow: 0 0 20px rgb(255, 255, 255);
+  background-color: none;
+}

@@ -1,14 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../common/common.css';
+import MainLink from '../common/MainLink';
 import './CSS3D.css';
 
 const CSS3D = () => {
   return (
     <section className="css3d">
-      <Link className="go-main" to={'/'}>
-        <img src={'/icons/back-arrow.svg'} alt={'go main'} />
-      </Link>
+      <MainLink mode={'dark'} />
       <div className="cube">
         <div className="top">
           <a className="go-youtube-btn" href="https://www.youtube.com/watch?v=nOdDtnHWaDo" target={'_blank'}>

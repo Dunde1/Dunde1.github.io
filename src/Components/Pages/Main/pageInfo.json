@@ -5,7 +5,12 @@
     "tag": ["#css", "#3d"],
     "options": { "textColor": "aliceblue", "textSize": "x-large" }
   },
-  { "name": "tmp2", "thumbnail": "", "tag": ["#tmp2"], "options": { "textColor": "navy", "textSize": "x-large" } },
+  {
+    "name": "loading-rings",
+    "thumbnail": "loading_rings.png",
+    "tag": ["#css", "#loading", "#rings"],
+    "options": { "textColor": "aliceblue", "textSize": "x-large" }
+  },
   { "name": "tmp3", "thumbnail": "", "tag": ["#tmp3"], "options": { "textColor": "navy", "textSize": "x-large" } },
   { "name": "tmp4", "thumbnail": "", "tag": ["#tmp4"], "options": { "textColor": "navy", "textSize": "x-large" } }
 ]

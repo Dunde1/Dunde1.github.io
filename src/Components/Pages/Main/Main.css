@@ -115,6 +115,7 @@
 
 .Main-contents > .content > .post-name {
   font-weight: 800;
+  text-align: center;
 
   transition: all 0.3s;
 }
@@ -137,8 +138,8 @@
 }
 
 .Main-contents > .content:hover > .post-name {
+  transform: translate(0, -30%);
   background-size: 110% 110%;
-
   font-size: xx-large !important;
 }
 
