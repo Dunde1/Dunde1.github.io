@@ -15,7 +15,7 @@ const MainContents = () => {
             {v.name}
           </span>
           <span className="post-tag" style={{ borderColor: v.options.textColor, color: v.options.textColor }}>
-            {v.tag.map((t) => `#${t}`).join(', ')}
+            {v.tag.map((t) => `${t}`).join(', ')}
           </span>
         </Link>
       ))}
