@@ -1,6 +1,11 @@
 [
-  { "name": "tmp1", "thumbnail": "", "tag": "" },
-  { "name": "tmp2", "thumbnail": "", "tag": "" },
-  { "name": "tmp3", "thumbnail": "", "tag": "" },
-  { "name": "tmp4", "thumbnail": "", "tag": "" }
+  {
+    "name": "css3d",
+    "thumbnail": "css3d.png",
+    "tag": ["#css", "#3d"],
+    "options": { "textColor": "aliceblue", "textSize": "x-large" }
+  },
+  { "name": "tmp2", "thumbnail": "", "tag": ["#tmp2"], "options": { "textColor": "navy", "textSize": "x-large" } },
+  { "name": "tmp3", "thumbnail": "", "tag": ["#tmp3"], "options": { "textColor": "navy", "textSize": "x-large" } },
+  { "name": "tmp4", "thumbnail": "", "tag": ["#tmp4"], "options": { "textColor": "navy", "textSize": "x-large" } }
 ]
