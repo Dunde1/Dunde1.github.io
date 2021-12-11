@@ -35,8 +35,10 @@ const Monitor = ({ active }: { active: number }) => {
 };
 
 const Navigation = ({ active, setActive }: { active: number; setActive: React.Dispatch<React.SetStateAction<number>> }) => {
+  const color = ['white', 'dimgray', 'aquamarine', 'cadetblue'];
+
   return (
-    <div className="navigation">
+    <div className="navigation" style={{ '--shadow-color': color[active] } as React.CSSProperties}>
       <ul>
         <li className={`list ${active === 0 ? 'active' : ''}`} onClick={() => setActive(0)}>
           <a href="#">
