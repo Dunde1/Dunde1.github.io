@@ -1,0 +1,213 @@
+.sample2 .navigation {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 400px;
+  height: 60px;
+
+  background: white;
+  border-radius: 10px;
+}
+
+.sample2 .navigation ul {
+  display: flex;
+  width: 350px;
+  padding: 0;
+}
+
+.sample2 .navigation ul li {
+  position: relative;
+
+  width: 70px;
+  height: 60px;
+  z-index: 2;
+
+  list-style: none;
+  cursor: pointer;
+}
+
+.sample2 .navigation ul li a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  text-align: center;
+}
+
+.sample2 .navigation ul li a .icon {
+  position: relative;
+  display: block;
+
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 65px;
+
+  transition: all 0.5s;
+}
+
+.sample2 .navigation ul li.active a .icon {
+  transform: translateY(-30px);
+  filter: invert(51%) sepia(16%) saturate(2892%) hue-rotate(167deg) brightness(97%) contrast(97%);
+}
+
+.sample2 .navigation ul li a .text {
+  position: absolute;
+  background-color: #2196f3;
+
+  color: white;
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+
+  border-radius: 12px;
+
+  padding: 2px 7px;
+
+  opacity: 0;
+  transform: translateY(35px);
+  transition: all 0.5s;
+}
+
+.sample2 .navigation ul li.active a .text {
+  opacity: 1;
+  transform: translateY(18px);
+}
+
+.sample2 .indicator {
+  position: absolute;
+
+  top: -50%;
+  width: 70px;
+  height: 70px;
+
+  background: white;
+  border-radius: 50%;
+  z-index: 1;
+  transform: translateX(calc(70px * var(--indicator)));
+  transition: all 0.5s;
+}
+
+.sample2 .indicator::before {
+  content: '';
+  position: absolute;
+
+  top: -5px;
+  left: -30px;
+  width: 35px;
+  height: 35px;
+
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 15px 25px white;
+}
+
+.sample2 .indicator::after {
+  content: '';
+  position: absolute;
+
+  top: -5px;
+  left: 65px;
+  width: 35px;
+  height: 35px;
+
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: -15px 25px white;
+}
+
+/* 여기부터 모니터 */
+
+.sample2 .monitor {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 400px;
+  height: 500px;
+
+  background: transparent;
+  overflow: hidden;
+}
+
+.sample2 .monitor .pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: inherit;
+
+  transform: translateX(calc(-400px * var(--i)));
+  transition: all 0.5s;
+}
+
+.sample2 .monitor .pages .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 400px;
+  height: inherit;
+
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.sample2 .monitor .pages .page.active {
+  opacity: 1;
+}
+
+.sample2 .page img {
+  position: absolute;
+  top: 20%;
+  width: 200px;
+  height: 200px;
+}
+
+.sample2 .page {
+  animation: rainbow 5s linear infinite;
+}
+
+.sample2 .page::after {
+  content: '';
+  position: absolute;
+
+  top: 45%;
+  width: 170px;
+  height: 200px;
+
+  filter: blur(20px);
+
+  transform: perspective(1000px) rotateX(80deg);
+
+  background: black;
+}
+
+@keyframes rainbow {
+  0% {
+    filter: invert(22%) sepia(62%) saturate(6905%) hue-rotate(354deg) brightness(112%) contrast(128%);
+  }
+  16.6% {
+    filter: invert(58%) sepia(97%) saturate(1073%) hue-rotate(0deg) brightness(103%) contrast(101%);
+  }
+  33.3% {
+    filter: invert(100%) sepia(32%) saturate(6090%) hue-rotate(356deg) brightness(101%) contrast(106%);
+  }
+  50% {
+    filter: invert(25%) sepia(61%) saturate(6473%) hue-rotate(116deg) brightness(91%) contrast(105%);
+  }
+  66.6% {
+    filter: invert(8%) sepia(100%) saturate(7087%) hue-rotate(248deg) brightness(99%) contrast(143%);
+  }
+  83.3% {
+    filter: invert(7%) sepia(90%) saturate(4735%) hue-rotate(240deg) brightness(93%) contrast(125%);
+  }
+  100% {
+    filter: invert(9%) sepia(98%) saturate(5094%) hue-rotate(296deg) brightness(87%) contrast(107%);
+  }
+}

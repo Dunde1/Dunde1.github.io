@@ -1,0 +1,242 @@
+.sample1 .icon img {
+  width: 20px;
+  height: 20px;
+
+  filter: brightness(0);
+}
+
+.sample1 .navigation {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 330px;
+  height: 70px;
+
+  background: white;
+
+  border-radius: 10px;
+}
+
+.sample1 .navigation ul {
+  display: flex;
+  width: 280px;
+  padding: 0;
+}
+
+.sample1 .navigation ul li {
+  position: relative;
+
+  width: 70px;
+  height: 70px;
+
+  z-index: 1;
+  list-style: none;
+}
+
+.sample1 .navigation ul li a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.sample1 .navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  transition: all 0.5s;
+}
+
+.sample1 .navigation ul li.active a .icon {
+  transform: translateY(-35px);
+}
+
+.sample1 .navigation ul li a .text {
+  position: absolute;
+
+  color: #222327;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s;
+}
+
+.sample1 .navigation ul li.active a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+.sample1 .indicator {
+  position: absolute;
+
+  top: -50%;
+  width: 70px;
+  height: 70px;
+
+  background: #29fd53;
+
+  border-radius: 50%;
+  border: 6px solid #222327;
+  box-sizing: border-box;
+
+  transition: 0.5s;
+}
+
+.sample1 .indicator::before,
+.sample1 .indicator::after {
+  content: '';
+  position: absolute;
+
+  top: 50%;
+  width: 20px;
+  height: 20px;
+
+  box-shadow: 0px -10px 0 0 #222327;
+  background-color: transparent;
+}
+
+.sample1 .indicator::before {
+  left: -21.5px;
+  border-top-right-radius: 20px;
+}
+
+.sample1 .indicator::after {
+  right: -21.5px;
+  border-top-left-radius: 20px;
+}
+
+.sample1 .navigation ul li:nth-child(1).active ~ .indicator {
+  transform: translateX(calc(70px * 0));
+}
+
+.sample1 .navigation ul li:nth-child(2).active ~ .indicator {
+  transform: translateX(calc(70px * 1));
+}
+
+.sample1 .navigation ul li:nth-child(3).active ~ .indicator {
+  transform: translateX(calc(70px * 2));
+}
+
+.sample1 .navigation ul li:nth-child(4).active ~ .indicator {
+  transform: translateX(calc(70px * 3));
+}
+
+/* 여기부터 화면 */
+
+.sample1 .monitor {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 330px;
+  height: 430px;
+
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.sample1 .monitor .pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: inherit;
+
+  transform: translateX(calc(-330px * var(--i)));
+  transition: all 0.5s;
+}
+
+.sample1 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 330px;
+  height: inherit;
+
+  border-radius: 10px;
+  border-left: 1px solid #222327;
+  border-right: 1px solid #222327;
+  box-sizing: border-box;
+
+  font-size: 30px;
+  font-family: consolas;
+  font-weight: bold;
+}
+
+.sample1 .page a {
+  text-decoration: none;
+  text-align: center;
+}
+
+.sample1 .page.home {
+  background: white;
+}
+
+.sample1 .page.home a {
+  color: black;
+}
+
+.sample1 .page.git {
+  background: dimgray;
+}
+
+.sample1 .page.git a {
+  color: beige;
+}
+
+.sample1 .page.blog {
+  background-color: aquamarine;
+}
+
+.sample1 .page.blog a {
+  color: darkblue;
+}
+
+.sample1 .page.source {
+  background-color: cadetblue;
+}
+
+.sample1 .page.source a {
+  color: cornsilk;
+}
+
+.sample1 .page img {
+  position: absolute;
+  transform: translateY(-30px);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.sample1 .page a:hover ~ img {
+  transform: translateY(-60px);
+  opacity: 1;
+}
+
+/* 여기서부터 그림자 효과 */
+
+.sample1 .navigation::after {
+  content: '';
+  position: absolute;
+
+  width: calc(100% + 150px);
+  height: calc(100% + 100px);
+  top: 80px;
+
+  transform-style: preserve-3d;
+  transform: perspective(150px) rotateX(30deg);
+
+  filter: blur(5px);
+
+  background-color: var(--shadow-color);
+  transition: all 0.5s;
+}

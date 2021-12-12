@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Sample1.css';
 
 const Monitor = ({ active }: { active: number }) => {
   return (
@@ -80,7 +81,7 @@ const Sample1 = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <div className="sample">
+    <div className="sample sample1">
       <Monitor active={active} />
       <Navigation active={active} setActive={setActive} />
     </div>
