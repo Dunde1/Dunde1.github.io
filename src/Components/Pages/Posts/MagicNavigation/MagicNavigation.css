@@ -6,7 +6,6 @@
 
   width: 100%;
   height: 100%;
-  padding-bottom: 200px;
 
   background: #222327;
 }
@@ -252,4 +251,8 @@
 
   background-color: var(--shadow-color);
   transition: all 0.5s;
+}
+
+.sample {
+  padding-bottom: 200px;
 }

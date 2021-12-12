@@ -1,0 +1,63 @@
+.display-posts {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+.display-posts button {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.display-posts button img {
+  width: 50px;
+  height: 50px;
+}
+
+.display-posts button.prev {
+  left: 20px;
+  top: calc(50% - 25px);
+}
+
+.display-posts button.prev:hover {
+  transform: translate(10px, 0);
+}
+
+.display-posts button.prev.disable {
+  transform: none !important;
+  filter: brightness(0.5) blur(1px);
+}
+
+.display-posts button.next {
+  right: 20px;
+  top: calc(50% - 25px);
+  transform: rotate(180deg);
+}
+
+.display-posts button.next:hover {
+  transform: rotate(180deg) translate(10px, 0);
+}
+
+.display-posts button.next.disable {
+  transform: rotate(180deg) !important;
+  filter: brightness(0.5) blur(1px);
+}
+
+.display-posts .display-child {
+  position: absolute;
+
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(calc(-30deg * var(--idx))) translateX(calc(100vw * var(--idx))) translateZ(calc(1000px * var(--idx)));
+
+  transition: all 1s;
+}
