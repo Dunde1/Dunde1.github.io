@@ -9,7 +9,7 @@
   background-color: black;
 }
 
-.cube {
+.css3d .cube {
   position: relative;
 
   width: 301px;
@@ -28,8 +28,8 @@
   }
 }
 
-.cube div,
-.cube div span {
+.css3d .cube div,
+.css3d .cube div span {
   position: absolute;
 
   top: 0;
@@ -38,17 +38,17 @@
   height: 100%;
 }
 
-.cube div {
+.css3d .cube div {
   transform-style: preserve-3d;
 }
 
-.cube div span {
+.css3d .cube div span {
   background: linear-gradient(#151515, #00ec00);
   transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
 }
 
-.top,
-.top::before {
+.css3d .top,
+.css3d .top::before {
   position: absolute;
 
   top: 0;
@@ -57,7 +57,7 @@
   height: 300px;
 }
 
-.top {
+.css3d .top {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +66,7 @@
   transform: rotateX(90deg) translateZ(150px);
 }
 
-.top::before {
+.css3d .top::before {
   content: '';
   background: #0f0;
   transform: translateZ(-380px);
@@ -75,7 +75,7 @@
     0 0 500px rgba(0, 255, 0, 1);
 }
 
-.go-youtube-btn {
+.css3d .go-youtube-btn {
   border: none;
   background: none;
 
@@ -109,7 +109,7 @@
   }
 }
 
-.go-youtube-btn:hover {
+.css3d .go-youtube-btn:hover {
   font-size: 43px;
   filter: drop-shadow(0px 0px 50px white);
 }

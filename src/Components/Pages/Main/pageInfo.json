@@ -17,5 +17,10 @@
     "tag": ["#css", "#navigation"],
     "options": { "textColor": "crimson", "textSize": "x-large" }
   },
-  { "name": "tmp4", "thumbnail": "", "tag": ["#tmp4"], "options": { "textColor": "navy", "textSize": "x-large" } }
+  {
+    "name": "animated-stairs",
+    "thumbnail": "animated-stairs.png",
+    "tag": ["#css", "#animation", "#3d"],
+    "options": { "textColor": "navy", "textSize": "x-large" }
+  }
 ]

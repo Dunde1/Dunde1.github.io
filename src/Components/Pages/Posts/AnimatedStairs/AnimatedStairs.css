@@ -1,0 +1,202 @@
+.animated-stairs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  background: radial-gradient(#eac4ff, #9e57c5);
+  /* overflow: hidden; */
+}
+
+.animated-stairs .stairs {
+  position: relative;
+
+  width: 500px;
+  height: 300px;
+
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(var(--drag));
+}
+
+.animated-stairs .stairs.animated {
+  animation: rotate-stairs 10s linear infinite;
+}
+
+@keyframes rotate-stairs {
+  from {
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+}
+
+.animated-stairs .stairs .base {
+  position: absolute;
+
+  top: 0;
+  left: 60px;
+  width: 360px;
+  height: 300px;
+
+  background: #a54bcf;
+  filter: blur(20px);
+
+  opacity: 0.5;
+  transform: rotateX(90deg) translateZ(-150px) scale(1.25);
+}
+
+.animated-stairs .stairs .step {
+  position: absolute;
+
+  left: calc(60px * var(--j));
+  bottom: 0;
+  width: 61px;
+  height: calc(60px * var(--j));
+
+  transform-style: preserve-3d;
+}
+
+.animated-stairs .stairs .step::before {
+  content: '';
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 300px;
+
+  background: #cf8df1;
+  transform: rotateX(90deg) translateZ(150px);
+}
+
+.animated-stairs .stairs .step:hover::before {
+  filter: brightness(1.1);
+  cursor: pointer;
+}
+
+.animated-stairs .stairs .step::after {
+  content: '';
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 60px;
+
+  background: #ae52dd;
+  transform: rotateY(90deg) translateZ(-150px);
+}
+
+.animated-stairs .stairs .step i {
+  position: absolute;
+  display: block;
+
+  width: 60px;
+  height: 100%;
+
+  background: #a54bcf;
+  transform-style: preserve-3d;
+}
+
+.animated-stairs .stairs .step i:nth-child(1) {
+  transform: translateZ(150px) scaleX(1.01);
+}
+
+.animated-stairs .stairs .step i:nth-child(2) {
+  transform: translateZ(-150px) scaleX(1.01);
+}
+
+.animated-stairs .stairs .step:last-child i:nth-child(2)::before {
+  content: '';
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+
+  background: #ae52dd;
+
+  transform: rotateY(90deg) translate3d(-150px, 0, -90px);
+}
+
+/* 여기부터 제어판 */
+
+.animated-stairs .control-panel {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  bottom: 20%;
+}
+
+.animated-stairs .control-panel .bar {
+  width: 360px;
+  height: 5px;
+
+  background: rgba(255, 255, 255, 0.3);
+
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.animated-stairs .control-panel .bar .slider {
+  position: absolute;
+
+  width: 20px;
+  height: 20px;
+
+  background: white;
+
+  border: 3px solid black;
+  border-radius: 50%;
+
+  z-index: 1;
+  cursor: pointer;
+  transform: translateX(calc(var(--drag) - 10px)) translateY(-10px);
+  transition: opacity 0.3s;
+}
+
+.animated-stairs .control-panel .bar .slider.disable {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.animated-stairs .control-panel .auto-button {
+  background-color: beige;
+
+  font-size: 20px;
+
+  border: 3px solid black;
+  border-radius: 10px;
+
+  padding: 3px 10px;
+  margin-left: 20px;
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+
+.animated-stairs .control-panel .auto-button.disable {
+  background-color: gray;
+  filter: brightness(0.8);
+}
+
+.animated-stairs .control-panel .go-to-youtube {
+  position: absolute;
+
+  top: 80px;
+
+  color: black;
+  text-decoration: none;
+
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  font-weight: bold;
+
+  cursor: pointer;
+}

@@ -1,11 +1,11 @@
-.sample1 .icon img {
+.magic-navigation .sample1 .icon img {
   width: 20px;
   height: 20px;
 
   filter: brightness(0);
 }
 
-.sample1 .navigation {
+.magic-navigation .sample1 .navigation {
   position: relative;
   display: flex;
   justify-content: center;
@@ -19,13 +19,13 @@
   border-radius: 10px;
 }
 
-.sample1 .navigation ul {
+.magic-navigation .sample1 .navigation ul {
   display: flex;
   width: 280px;
   padding: 0;
 }
 
-.sample1 .navigation ul li {
+.magic-navigation .sample1 .navigation ul li {
   position: relative;
 
   width: 70px;
@@ -35,7 +35,7 @@
   list-style: none;
 }
 
-.sample1 .navigation ul li a {
+.magic-navigation .sample1 .navigation ul li a {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -47,18 +47,18 @@
   font-weight: 500;
 }
 
-.sample1 .navigation ul li a .icon {
+.magic-navigation .sample1 .navigation ul li a .icon {
   position: relative;
   display: block;
   line-height: 75px;
   transition: all 0.5s;
 }
 
-.sample1 .navigation ul li.active a .icon {
+.magic-navigation .sample1 .navigation ul li.active a .icon {
   transform: translateY(-35px);
 }
 
-.sample1 .navigation ul li a .text {
+.magic-navigation .sample1 .navigation ul li a .text {
   position: absolute;
 
   color: #222327;
@@ -70,12 +70,12 @@
   transition: all 0.5s;
 }
 
-.sample1 .navigation ul li.active a .text {
+.magic-navigation .sample1 .navigation ul li.active a .text {
   opacity: 1;
   transform: translateY(10px);
 }
 
-.sample1 .indicator {
+.magic-navigation .sample1 .indicator {
   position: absolute;
 
   top: -50%;
@@ -91,8 +91,8 @@
   transition: 0.5s;
 }
 
-.sample1 .indicator::before,
-.sample1 .indicator::after {
+.magic-navigation .sample1 .indicator::before,
+.magic-navigation .sample1 .indicator::after {
   content: '';
   position: absolute;
 
@@ -104,35 +104,35 @@
   background-color: transparent;
 }
 
-.sample1 .indicator::before {
+.magic-navigation .sample1 .indicator::before {
   left: -21.5px;
   border-top-right-radius: 20px;
 }
 
-.sample1 .indicator::after {
+.magic-navigation .sample1 .indicator::after {
   right: -21.5px;
   border-top-left-radius: 20px;
 }
 
-.sample1 .navigation ul li:nth-child(1).active ~ .indicator {
+.magic-navigation .sample1 .navigation ul li:nth-child(1).active ~ .indicator {
   transform: translateX(calc(70px * 0));
 }
 
-.sample1 .navigation ul li:nth-child(2).active ~ .indicator {
+.magic-navigation .sample1 .navigation ul li:nth-child(2).active ~ .indicator {
   transform: translateX(calc(70px * 1));
 }
 
-.sample1 .navigation ul li:nth-child(3).active ~ .indicator {
+.magic-navigation .sample1 .navigation ul li:nth-child(3).active ~ .indicator {
   transform: translateX(calc(70px * 2));
 }
 
-.sample1 .navigation ul li:nth-child(4).active ~ .indicator {
+.magic-navigation .sample1 .navigation ul li:nth-child(4).active ~ .indicator {
   transform: translateX(calc(70px * 3));
 }
 
 /* 여기부터 화면 */
 
-.sample1 .monitor {
+.magic-navigation .sample1 .monitor {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -144,7 +144,7 @@
   overflow: hidden;
 }
 
-.sample1 .monitor .pages {
+.magic-navigation .sample1 .monitor .pages {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,7 +155,7 @@
   transition: all 0.5s;
 }
 
-.sample1 .page {
+.magic-navigation .sample1 .page {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,58 +173,58 @@
   font-weight: bold;
 }
 
-.sample1 .page a {
+.magic-navigation .sample1 .page a {
   text-decoration: none;
   text-align: center;
 }
 
-.sample1 .page.home {
+.magic-navigation .sample1 .page.home {
   background: white;
 }
 
-.sample1 .page.home a {
+.magic-navigation .sample1 .page.home a {
   color: black;
 }
 
-.sample1 .page.git {
+.magic-navigation .sample1 .page.git {
   background: dimgray;
 }
 
-.sample1 .page.git a {
+.magic-navigation .sample1 .page.git a {
   color: beige;
 }
 
-.sample1 .page.blog {
+.magic-navigation .sample1 .page.blog {
   background-color: aquamarine;
 }
 
-.sample1 .page.blog a {
+.magic-navigation .sample1 .page.blog a {
   color: darkblue;
 }
 
-.sample1 .page.source {
+.magic-navigation .sample1 .page.source {
   background-color: cadetblue;
 }
 
-.sample1 .page.source a {
+.magic-navigation .sample1 .page.source a {
   color: cornsilk;
 }
 
-.sample1 .page img {
+.magic-navigation .sample1 .page img {
   position: absolute;
   transform: translateY(-30px);
   opacity: 0;
   transition: all 0.3s;
 }
 
-.sample1 .page a:hover ~ img {
+.magic-navigation .sample1 .page a:hover ~ img {
   transform: translateY(-60px);
   opacity: 1;
 }
 
 /* 여기서부터 그림자 효과 */
 
-.sample1 .navigation::after {
+.magic-navigation .sample1 .navigation::after {
   content: '';
   position: absolute;
 
