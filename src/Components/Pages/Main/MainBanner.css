@@ -1,0 +1,123 @@
+.Main .Main-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 400px;
+
+  padding: 0;
+}
+
+.Main .Main-banner .contents {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.Main .Main-banner .contents .text {
+  position: absolute;
+  color: midnightblue;
+  font-family: 'righteous', sans-serif;
+  font-size: 100px;
+  text-shadow: 0px 0px 50px white;
+
+  top: 150px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.Main .Main-banner .contents .effect {
+  position: absolute;
+
+  top: 0;
+  width: 0;
+  height: calc(100vw + 600px);
+
+  transition: all 2.5s ease;
+}
+
+.Main .Main-banner .contents .effect.day {
+  transform: rotate(12deg);
+}
+
+.Main .Main-banner .contents .effect.night {
+  transform: rotate(168deg);
+}
+
+.Main .Main-banner .contents .effect::after {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  content: 'change night';
+  color: rgba(0, 0, 0, 0);
+  font-size: 30px;
+  font-weight: bold;
+
+  top: 0px;
+  width: 200px;
+  height: 200px;
+
+  background: rgb(255, 200, 90);
+
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: all 0.5s;
+  animation: effect-shadow 3s infinite;
+}
+
+.Main .Main-banner .contents .effect:hover::after {
+  color: rgba(0, 0, 0, 1);
+}
+
+@keyframes effect-shadow {
+  0% {
+    box-shadow: 0px 0px 20px rgb(255, 155, 90);
+  }
+  50% {
+    box-shadow: 0px 0px 50px rgb(255, 155, 90);
+  }
+  100% {
+    box-shadow: 0px 0px 20px rgb(255, 155, 90);
+  }
+}
+
+.Main .Main-banner .contents .effect::before {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  content: 'change day';
+  color: rgba(0, 0, 0, 0);
+  font-size: 30px;
+  font-weight: bold;
+
+  bottom: 0px;
+  width: 200px;
+  height: 200px;
+
+  background: rgb(220, 220, 220);
+  box-shadow: 0px 0px 20px rgb(255, 255, 255);
+
+  border-radius: 50%;
+  cursor: pointer;
+
+  transform: rotate(180deg);
+  transition: all 0.5s;
+}
+
+.Main .Main-banner .contents .effect:hover::before {
+  color: rgba(0, 0, 0, 1);
+}

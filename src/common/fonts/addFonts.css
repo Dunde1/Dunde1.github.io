@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Creepster';
+  src: url('./creepster/creepster-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Righteous;
+  src: url('./righteous/righteous-regular.ttf') format('truetype');
+}

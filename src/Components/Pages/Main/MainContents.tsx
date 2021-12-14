@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { atom, useRecoilValue } from 'recoil';
 import pageInfo from './pageInfo.json';
+import './MainContents.css';
 
 export const posts = atom({ key: 'pageInfo', default: pageInfo });
 

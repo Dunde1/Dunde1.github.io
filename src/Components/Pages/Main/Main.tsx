@@ -1,12 +1,19 @@
-import MainContents from './MainContents';
-import MainSearch from './MainSearch';
+import '../../../common/fonts/addFonts.css';
 import './Main.css';
+import MainBanner from './MainBanner';
+import MainSearch from './MainSearch';
+import MainContents from './MainContents';
+import { atom, useRecoilValue } from 'recoil';
+
+export const mainTheme = atom({ key: 'mainTheme', default: 'day' });
 
 const Main = () => {
+  const theme = useRecoilValue(mainTheme);
+
   return (
-    <div className="Main">
+    <div className={`Main ${theme}`}>
       <section className="Main-header">
-        <img className="Main-image box-outter" src="/main.png" alt="main hero" />
+        <MainBanner />
         <MainSearch />
       </section>
       <MainContents />

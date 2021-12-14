@@ -4,150 +4,28 @@
   justify-content: flex-start;
   align-items: center;
 
-  background-color: rgb(230, 230, 230);
-
   width: 100vw;
   height: 100vh;
+
+  transition: all 2s ease;
 }
 
-.Main-image {
-  width: 700px;
-  height: 300px;
-
-  margin: 10px 0px;
+.Main.day {
+  background-color: rgb(170, 200, 255);
 }
 
-.Main-search {
+.Main.night {
+  background-color: rgb(30, 30, 30);
+}
+
+.Main .Main-header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  width: 100%;
-  height: 50px;
-
-  margin-bottom: 15px;
 }
 
-.search-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 30px;
-  height: 30px;
-  background-color: rgb(190, 255, 230);
-
-  border: none;
-  border-radius: 5px;
-
-  cursor: pointer;
-
-  margin: 0px 5px;
-  transition: all 0.3s;
-}
-
-.search-button:hover {
-  background-color: rgb(100, 215, 175);
-  border-radius: 20px;
-}
-
-.search-input {
-  width: 200px;
-  height: 23px;
-
-  outline: none;
-  border: 2px solid black;
-  border-radius: 5px;
-}
-
-.search-input:focus {
-  border: 2px solid rgb(190, 255, 230);
-  animation: search-input-focus 1s infinite;
-}
-
-@keyframes search-input-focus {
-  0% {
-    border-color: rgb(0, 0, 255);
-  }
-  25% {
-    border-color: rgb(125, 0, 125);
-  }
-  50% {
-    border-color: rgb(255, 125, 0);
-  }
-  75% {
-    border-color: rgb(125, 255, 125);
-  }
-  100% {
-    border-color: rgb(0, 125, 255);
-  }
-}
-
-.Main-contents {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-
-  width: 100%;
-
-  box-sizing: border-box;
-}
-
-.Main-contents > .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 200px;
-  height: 200px;
-
-  background-size: 100% 100%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-
-  margin: 10px;
-
-  text-decoration-line: none;
-
-  transition: all 0.3s;
-}
-
-.Main-contents > .content > .post-name {
-  font-weight: 800;
-  text-align: center;
-
-  transition: all 0.3s;
-}
-
-.Main-contents > .content > .post-tag {
-  position: absolute;
-  transform: translate(0, 200%);
-  background-color: rgba(0, 0, 0, 0.2);
-
-  border: 2px solid;
-  border-radius: 30px;
-  padding: 2px 10px;
-
-  opacity: 0;
-  transition: all 0.3s;
-}
-
-.Main-contents > .content:hover {
-  background-size: 110% 110%;
-}
-
-.Main-contents > .content:hover > .post-name {
-  transform: translate(0, -30%);
-  background-size: 110% 110%;
-  font-size: xx-large !important;
-}
-
-.Main-contents > .content:hover > .post-tag {
-  opacity: 1;
-}
-
-.box-outter {
+.Main .box-outter {
   background-color: white;
 
   border: 5px solid rgb(150, 255, 180);
@@ -157,7 +35,7 @@
   transition: all 0.3s;
 }
 
-.box-outter:hover {
+.Main .box-outter:hover {
   border: 5px solid rgb(130, 170, 255);
   border-radius: 30px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);

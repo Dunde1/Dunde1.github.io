@@ -1,6 +1,7 @@
 import { useSetRecoilState } from 'recoil';
 import { posts } from './MainContents';
 import pageInfo from './pageInfo.json';
+import './MainSearch.css';
 
 const MainSearchInput = ({}) => {
   const setPostPages = useSetRecoilState(posts);
