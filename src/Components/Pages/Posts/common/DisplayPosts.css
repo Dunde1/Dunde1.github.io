@@ -61,3 +61,31 @@
 
   transition: all 1s;
 }
+
+@media (max-width: 500px) {
+  .display-posts button.prev {
+    left: 0px;
+    transform: scale(0.5);
+  }
+
+  .display-posts button.prev:hover {
+    transform: translate(10px, 0) scale(0.5);
+  }
+
+  .display-posts button.prev.disable {
+    transform: scale(0.5) !important;
+  }
+
+  .display-posts button.next {
+    right: 0px;
+    transform: rotate(180deg) scale(0.5);
+  }
+
+  .display-posts button.next:hover {
+    transform: rotate(180deg) translate(10px, 0) scale(0.5);
+  }
+
+  .display-posts button.next.disable {
+    transform: rotate(180deg) scale(0.5) !important;
+  }
+}
