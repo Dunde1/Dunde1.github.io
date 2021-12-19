@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { atom, useRecoilValue, useSetRecoilState } from 'recoil';
+import { atom, useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import MainLink from '../common/MainLink';
 import './AnimatedStairs.css';
 
@@ -11,27 +11,46 @@ const Stairs = ({ step, isAuto }: { step: number; isAuto: boolean }) => {
   const steps = new Array(step).fill('');
 
   return (
-    <div className={`stairs${isAuto ? ' animated' : ''}`} style={{ '--drag': dragPixel + 'deg' } as React.CSSProperties}>
-      <div className="base"></div>
-      {steps.map((_, i) => (
-        <div className="step" style={{ '--j': i + 1 } as React.CSSProperties}>
-          <i></i>
-          <i></i>
-        </div>
-      ))}
+    <div className="stairs-scale">
+      <div className={`stairs${isAuto ? ' animated' : ''}`} style={{ '--drag': dragPixel + 'deg' } as React.CSSProperties}>
+        <div className="base"></div>
+        {steps.map((_, i) => (
+          <div className="step" style={{ '--j': i + 1 } as React.CSSProperties} key={i}>
+            <i></i>
+            <i></i>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
 const ControlPanel = ({ isAuto, setIsAuto }: { isAuto: boolean; setIsAuto: React.Dispatch<React.SetStateAction<boolean>> }) => {
-  const dragPixel = useRecoilValue(dragPixelAtom);
+  const [dragPixel, setDragPixel] = useRecoilState(dragPixelAtom);
   const setSliderDefaultPixel = useSetRecoilState(sliderDefaultPixelAtom);
 
   const slider = React.createRef<HTMLDivElement>();
 
+  const setSlider = (sliderElement: HTMLDivElement | null) => {
+    setSliderDefaultPixel(sliderElement?.getBoundingClientRect().x as number);
+  };
+
   useEffect(() => {
-    setSliderDefaultPixel(slider.current?.getBoundingClientRect().x as number);
+    setSlider(slider.current);
   }, []);
+
+  useEffect(() => {
+    const resizeEvent = () => {
+      setSlider(slider.current);
+      setDragPixel(0);
+    };
+
+    window.addEventListener('resize', resizeEvent);
+
+    return () => {
+      window.removeEventListener('resize', resizeEvent);
+    };
+  }, [slider]);
 
   return (
     <div className="control-panel">
@@ -66,8 +85,8 @@ const AnimatedStairs = () => {
   const sliderMove = (e: React.MouseEvent<HTMLElement>) => {
     if (!isMouseDownSlider) return;
 
-    const [MIN_PIXEL, MAX_PIXEL] = [0, 360];
-    const moveOffset = e.pageX - sliderDefaultPixel;
+    const [MIN_PIXEL, MAX_PIXEL, SLIDER_HARF_WIDTH] = [0, 360, 10];
+    const moveOffset = e.pageX - sliderDefaultPixel - SLIDER_HARF_WIDTH;
 
     if (moveOffset < MIN_PIXEL || moveOffset > MAX_PIXEL) return;
 

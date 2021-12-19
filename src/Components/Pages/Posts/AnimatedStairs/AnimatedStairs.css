@@ -7,7 +7,6 @@
   height: 100%;
 
   background: radial-gradient(#eac4ff, #9e57c5);
-  /* overflow: hidden; */
 }
 
 .animated-stairs .stairs {
@@ -199,4 +198,30 @@
   font-weight: bold;
 
   cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .stairs-scale {
+    transform: scale(0.5);
+  }
+
+  .animated-stairs .stairs {
+    transform: rotateX(-30deg) rotateY(50deg);
+  }
+
+  .animated-stairs .control-panel .bar {
+    display: none;
+  }
+
+  .animated-stairs .control-panel .go-to-youtube {
+    top: 60px;
+    width: 250px;
+
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .animated-stairs .control-panel .auto-button {
+    margin-left: 0;
+  }
 }
