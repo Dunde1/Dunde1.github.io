@@ -211,3 +211,9 @@
     filter: invert(9%) sepia(98%) saturate(5094%) hue-rotate(296deg) brightness(87%) contrast(107%);
   }
 }
+
+@media (max-width: 500px) {
+  .magic-navigation .sample2 {
+    transform: scale(0.5);
+  }
+}
