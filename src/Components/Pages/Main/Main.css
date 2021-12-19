@@ -5,16 +5,24 @@
   align-items: center;
 
   width: 100vw;
-  height: 100vh;
-
-  transition: all 2s ease;
+  height: fit-content;
+  min-height: 100vh;
 }
 
-.Main.day {
+.Main .background {
+  position: fixed;
+
+  width: 100vw;
+  height: 100vh;
+
+  transition: background-color 2s ease;
+}
+
+.Main .background.day {
   background-color: rgb(170, 200, 255);
 }
 
-.Main.night {
+.Main .background.night {
   background-color: rgb(30, 30, 30);
 }
 
@@ -35,8 +43,11 @@
   transition: all 0.3s;
 }
 
-.Main .box-outter:hover {
-  border: 5px solid rgb(130, 170, 255);
-  border-radius: 30px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+@media (min-width: 400px) {
+  /* 가로 400px 이상에서만 효과발동(데스크톱) */
+  .Main .box-outter:hover {
+    border: 5px solid rgb(130, 170, 255);
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  }
 }

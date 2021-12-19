@@ -40,17 +40,9 @@
 
   top: 0;
   width: 0;
-  height: calc(100vw + 600px);
+  height: calc(100vh + 100vw);
 
   transition: all 2.5s ease;
-}
-
-.Main .Main-banner .contents .effect.day {
-  transform: rotate(12deg);
-}
-
-.Main .Main-banner .contents .effect.night {
-  transform: rotate(168deg);
 }
 
 .Main .Main-banner .contents .effect::after {
@@ -75,10 +67,6 @@
 
   transition: all 0.5s;
   animation: effect-shadow 3s infinite;
-}
-
-.Main .Main-banner .contents .effect:hover::after {
-  color: rgba(0, 0, 0, 1);
 }
 
 @keyframes effect-shadow {
@@ -118,6 +106,65 @@
   transition: all 0.5s;
 }
 
-.Main .Main-banner .contents .effect:hover::before {
-  color: rgba(0, 0, 0, 1);
+/* 데스크톱 */
+@media (min-width: 400px) {
+  .Main .Main-banner .contents .effect.day {
+    transform: rotate(12deg);
+  }
+
+  .Main .Main-banner .contents .effect.night {
+    transform: rotate(168deg);
+  }
+
+  .Main .Main-banner .contents .effect:hover::after {
+    color: rgba(0, 0, 0, 1);
+  }
+
+  .Main .Main-banner .contents .effect:hover::before {
+    color: rgba(0, 0, 0, 1);
+  }
+}
+
+@media (max-width: 580px) {
+  .Main .Main-banner .contents .text {
+    font-size: 15vw;
+  }
+}
+
+/* 스마트폰 */
+@media (max-width: 400px) {
+  .Main .Main-banner {
+    height: 220px;
+  }
+
+  .Main .Main-banner .contents .text {
+    font-size: 40px;
+    text-shadow: 0px 0px 25px white;
+
+    top: 100px;
+  }
+
+  .Main .Main-banner .contents .effect.day {
+    transform: rotate(5deg);
+  }
+
+  .Main .Main-banner .contents .effect.night {
+    transform: rotate(175deg);
+  }
+
+  .Main .Main-banner .contents .effect::after {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 15px;
+
+    width: 100px;
+    height: 100px;
+  }
+
+  .Main .Main-banner .contents .effect::before {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 15px;
+
+    width: 100px;
+    height: 100px;
+  }
 }

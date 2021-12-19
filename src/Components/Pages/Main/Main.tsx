@@ -7,11 +7,16 @@ import { atom, useRecoilValue } from 'recoil';
 
 export const mainTheme = atom({ key: 'mainTheme', default: 'day' });
 
-const Main = () => {
+const MainBackGround = () => {
   const theme = useRecoilValue(mainTheme);
 
+  return <div className={`background ${theme}`} />;
+};
+
+const Main = () => {
   return (
-    <div className={`Main ${theme}`}>
+    <div className="Main">
+      <MainBackGround />
       <section className="Main-header">
         <MainBanner />
         <MainSearch />
