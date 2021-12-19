@@ -166,3 +166,18 @@
   text-shadow: 0 0 20px rgb(255, 255, 255);
   background-color: none;
 }
+
+@media (max-width: 580px) {
+  .loading-rings .container {
+    transform: scale(0.4);
+  }
+
+  .loading-rings .container p {
+    transform: scale(2);
+  }
+
+  .loading-rings .go-to-youtube {
+    top: 200px;
+    font-size: 20px;
+  }
+}
