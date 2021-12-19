@@ -22,5 +22,11 @@
     "thumbnail": "animated-stairs.png",
     "tag": ["#css", "#animation", "#3d"],
     "options": { "textColor": "navy", "textSize": "x-large" }
+  },
+  {
+    "name": "css3d-text",
+    "thumbnail": "css3d-text.png",
+    "tag": ["#css", "#text", "#3d"],
+    "options": { "textColor": "aliceblue", "textSize": "x-large" }
   }
 ]
