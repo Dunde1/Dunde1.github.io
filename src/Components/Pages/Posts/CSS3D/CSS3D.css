@@ -113,3 +113,50 @@
   font-size: 43px;
   filter: drop-shadow(0px 0px 50px white);
 }
+
+@media (max-width: 630px) {
+  .css3d .cube {
+    width: 151px;
+    height: 151px;
+  }
+
+  .css3d .cube div span {
+    transform: rotateY(calc(90deg * var(--i))) translateZ(75px);
+  }
+
+  .css3d .top,
+  .css3d .top::before {
+    width: 150px;
+    height: 150px;
+  }
+
+  .css3d .top {
+    transform: rotateX(90deg) translateZ(75px);
+  }
+
+  .css3d .top::before {
+    transform: translateZ(-200px);
+  }
+
+  .css3d .go-youtube-btn {
+    font-size: 22px;
+  }
+
+  @keyframes reverse-rotate {
+    0% {
+      transform: rotateX(-90deg) translateY(-150px);
+    }
+    25% {
+      transform: rotateX(-90deg) translateY(-50px);
+    }
+    50% {
+      transform: rotateX(-90deg) translateY(-150px);
+    }
+    75% {
+      transform: rotateX(-90deg) translateY(-50px);
+    }
+    100% {
+      transform: rotateX(-90deg) translateY(-150px);
+    }
+  }
+}
