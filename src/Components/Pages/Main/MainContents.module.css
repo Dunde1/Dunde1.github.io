@@ -1,4 +1,4 @@
-.Main-contents {
+.contents {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -11,7 +11,7 @@
   z-index: 1;
 }
 
-.Main-contents > .content {
+.content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,14 +30,14 @@
   transition: all 0.3s;
 }
 
-.Main-contents > .content > .post-name {
+.post-name {
   font-weight: 800;
   text-align: center;
 
   transition: all 0.3s;
 }
 
-.Main-contents > .content > .post-tag {
+.post-tag {
   position: absolute;
   transform: translate(0, 200%);
   background-color: rgba(0, 0, 0, 0.2);
@@ -50,24 +50,24 @@
   transition: all 0.3s;
 }
 
-.Main-contents > .content:hover {
+.content:hover {
   background-size: 110% 110%;
 }
 
-.Main-contents > .content:hover > .post-name {
+.content:hover > .post-name {
   transform: translate(0, -30%);
   background-size: 110% 110%;
   font-size: xx-large !important;
 }
 
 @media (min-width: 400px) {
-  .Main-contents > .content:hover > .post-tag {
+  .content:hover > .post-tag {
     opacity: 1;
   }
 }
 
 @media (max-width: 400px) {
-  .Main-contents > .content > .post-tag {
+  .post-tag {
     opacity: 1;
   }
 }

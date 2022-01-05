@@ -1,7 +1,7 @@
+import style from './MainSearch.module.css';
 import { useSetRecoilState } from 'recoil';
 import { posts } from './MainContents';
 import pageInfo from './pageInfo.json';
-import './MainSearch.css';
 
 const MainSearchInput = ({}) => {
   const setPostPages = useSetRecoilState(posts);
@@ -43,14 +43,15 @@ const MainSearchInput = ({}) => {
     }, WAITING_TIME);
   };
 
-  return <input className="search-input" type="text" onInput={onInput} />;
+  return <input className={style.input} type="text" onInput={onInput} />;
 };
 
 const MainSearch = () => {
+  const { search, button } = style;
   return (
-    <div className="Main-search box-outter">
+    <div className={`${search} box-outter`}>
       <button
-        className="search-button"
+        className={button}
         onClick={() => {
           alert('not yet');
         }}

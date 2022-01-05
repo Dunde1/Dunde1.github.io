@@ -1,0 +1,17 @@
+.box-outter {
+  background-color: white;
+
+  border: 5px solid rgb(150, 255, 180);
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  transition: all 0.3s;
+}
+
+@media (min-width: 500px) {
+  .box-outter:hover {
+    border: 5px solid rgb(130, 170, 255);
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  }
+}

@@ -1,4 +1,4 @@
-.Main .Main-banner {
+.banner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +9,7 @@
   padding: 0;
 }
 
-.Main .Main-banner .contents {
+.contents {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -24,7 +24,7 @@
   overflow: hidden;
 }
 
-.Main .Main-banner .contents .text {
+.text {
   position: absolute;
   color: midnightblue;
   font-family: 'righteous', sans-serif;
@@ -36,7 +36,7 @@
   cursor: pointer;
 }
 
-.Main .Main-banner .contents .effect {
+.effect {
   position: absolute;
 
   top: 0;
@@ -46,7 +46,7 @@
   transition: all 2.5s ease;
 }
 
-.Main .Main-banner .contents .effect::after {
+.effect::after {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -82,7 +82,7 @@
   }
 }
 
-.Main .Main-banner .contents .effect::before {
+.effect::before {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -108,52 +108,52 @@
 }
 
 /* 데스크톱 */
-@media (min-width: 400px) {
-  .Main .Main-banner .contents .effect.day {
+@media (min-width: 500px) {
+  .effect.day {
     transform: rotate(12deg);
   }
 
-  .Main .Main-banner .contents .effect.night {
+  .effect.night {
     transform: rotate(168deg);
   }
 
-  .Main .Main-banner .contents .effect:hover::after {
+  .effect:hover::after {
     color: rgba(0, 0, 0, 1);
   }
 
-  .Main .Main-banner .contents .effect:hover::before {
+  .effect:hover::before {
     color: rgba(0, 0, 0, 1);
   }
 }
 
 @media (max-width: 580px) {
-  .Main .Main-banner .contents .text {
+  .text {
     font-size: 15vw;
   }
 }
 
 /* 스마트폰 */
-@media (max-width: 400px) {
-  .Main .Main-banner {
+@media (max-width: 500px) {
+  .banner {
     height: 220px;
   }
 
-  .Main .Main-banner .contents .text {
+  .text {
     font-size: 40px;
     text-shadow: 0px 0px 25px white;
 
     top: 100px;
   }
 
-  .Main .Main-banner .contents .effect.day {
+  .effect.day {
     transform: rotate(5deg);
   }
 
-  .Main .Main-banner .contents .effect.night {
+  .effect.night {
     transform: rotate(175deg);
   }
 
-  .Main .Main-banner .contents .effect::after {
+  .effect::after {
     color: rgba(0, 0, 0, 0.3);
     font-size: 15px;
 
@@ -161,7 +161,7 @@
     height: 100px;
   }
 
-  .Main .Main-banner .contents .effect::before {
+  .effect::before {
     color: rgba(0, 0, 0, 0.3);
     font-size: 15px;
 
