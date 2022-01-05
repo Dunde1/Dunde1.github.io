@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import style from './AnimatedStairs.module.css';
+import React, { useEffect, useState } from 'react';
 import { atom, useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import MainLink from '../common/MainLink';
-import './AnimatedStairs.css';
 
 const dragPixelAtom = atom({ key: 'dragPixel', default: 0 });
 const sliderDefaultPixelAtom = atom({ key: 'sliderDefaultPixel', default: 0 });
@@ -9,13 +9,14 @@ const sliderDefaultPixelAtom = atom({ key: 'sliderDefaultPixel', default: 0 });
 const Stairs = ({ step, isAuto }: { step: number; isAuto: boolean }) => {
   const dragPixel = useRecoilValue(dragPixelAtom);
   const steps = new Array(step).fill('');
+  const { stairs, animated, base } = style;
 
   return (
-    <div className="stairs-scale">
-      <div className={`stairs${isAuto ? ' animated' : ''}`} style={{ '--drag': dragPixel + 'deg' } as React.CSSProperties}>
-        <div className="base"></div>
+    <div className={style['stairs-scale']}>
+      <div className={`${stairs} ${isAuto ? animated : ''}`} style={{ '--drag': dragPixel + 'deg' } as React.CSSProperties}>
+        <div className={base}></div>
         {steps.map((_, i) => (
-          <div className="step" style={{ '--j': i + 1 } as React.CSSProperties} key={i}>
+          <div className={style.step} style={{ '--j': i + 1 } as React.CSSProperties} key={i}>
             <i></i>
             <i></i>
           </div>
@@ -52,15 +53,21 @@ const ControlPanel = ({ isAuto, setIsAuto }: { isAuto: boolean; setIsAuto: React
     };
   }, [slider]);
 
+  const { bar, disable } = style;
+
   return (
-    <div className="control-panel">
-      <div className="bar">
-        <div className={`slider${isAuto ? ' disable' : ''}`} style={{ '--drag': dragPixel + 'px' } as React.CSSProperties} ref={slider}></div>
+    <div className={style['control-panel']}>
+      <div className={bar}>
+        <div
+          className={`${style.slider}${isAuto ? ' ' + disable : ''}`}
+          style={{ '--drag': dragPixel + 'px' } as React.CSSProperties}
+          ref={slider}
+        ></div>
       </div>
-      <button className={`auto-button${isAuto ? '' : ' disable'}`} onClick={() => setIsAuto(isAuto ? false : true)}>
+      <button className={`${style['auto-button']}${isAuto ? '' : ' ' + disable}`} onClick={() => setIsAuto(isAuto ? false : true)}>
         auto
       </button>
-      <a className="go-to-youtube" href="https://www.youtube.com/watch?v=wNC_J0A45Jw" target={'_black'}>
+      <a className={style['go-to-youtube']} href="https://www.youtube.com/watch?v=wNC_J0A45Jw" target={'_black'}>
         go to youtube source!
       </a>
     </div>
@@ -71,13 +78,14 @@ const AnimatedStairs = () => {
   const [isAuto, setIsAuto] = useState(true);
   const setDragPixel = useSetRecoilState(dragPixelAtom);
   const sliderDefaultPixel = useRecoilValue(sliderDefaultPixelAtom);
+  const { slider } = style;
 
   let isMouseDownSlider = false;
 
   const mouseDownSliderCheck = (e: React.MouseEvent<HTMLElement>) => {
     const { className } = e.target as HTMLElement;
 
-    if (className === 'slider') {
+    if (className === slider) {
       isMouseDownSlider = true;
     }
   };
@@ -95,7 +103,7 @@ const AnimatedStairs = () => {
 
   return (
     <section
-      className="animated-stairs"
+      className={style['animated-stairs']}
       onMouseDown={mouseDownSliderCheck}
       onMouseMove={sliderMove}
       onMouseUp={() => {

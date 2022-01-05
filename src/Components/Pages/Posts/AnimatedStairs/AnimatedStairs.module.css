@@ -9,7 +9,7 @@
   background: radial-gradient(#eac4ff, #9e57c5);
 }
 
-.animated-stairs .stairs {
+.stairs {
   position: relative;
 
   width: 500px;
@@ -19,7 +19,7 @@
   transform: rotateX(-30deg) rotateY(var(--drag));
 }
 
-.animated-stairs .stairs.animated {
+.stairs.animated {
   animation: rotate-stairs 10s linear infinite;
 }
 
@@ -32,7 +32,7 @@
   }
 }
 
-.animated-stairs .stairs .base {
+.base {
   position: absolute;
 
   top: 0;
@@ -47,7 +47,7 @@
   transform: rotateX(90deg) translateZ(-150px) scale(1.25);
 }
 
-.animated-stairs .stairs .step {
+.step {
   position: absolute;
 
   left: calc(60px * var(--j));
@@ -58,7 +58,7 @@
   transform-style: preserve-3d;
 }
 
-.animated-stairs .stairs .step::before {
+.step::before {
   content: '';
   position: absolute;
 
@@ -71,12 +71,12 @@
   transform: rotateX(90deg) translateZ(150px);
 }
 
-.animated-stairs .stairs .step:hover::before {
+.step:hover::before {
   filter: brightness(1.1);
   cursor: pointer;
 }
 
-.animated-stairs .stairs .step::after {
+.step::after {
   content: '';
   position: absolute;
 
@@ -89,7 +89,7 @@
   transform: rotateY(90deg) translateZ(-150px);
 }
 
-.animated-stairs .stairs .step i {
+.step i {
   position: absolute;
   display: block;
 
@@ -100,15 +100,15 @@
   transform-style: preserve-3d;
 }
 
-.animated-stairs .stairs .step i:nth-child(1) {
+.step i:nth-child(1) {
   transform: translateZ(150px) scaleX(1.01);
 }
 
-.animated-stairs .stairs .step i:nth-child(2) {
+.step i:nth-child(2) {
   transform: translateZ(-150px) scaleX(1.01);
 }
 
-.animated-stairs .stairs .step:last-child i:nth-child(2)::before {
+.step:last-child i:nth-child(2)::before {
   content: '';
   position: absolute;
 
@@ -124,7 +124,7 @@
 
 /* 여기부터 제어판 */
 
-.animated-stairs .control-panel {
+.control-panel {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -133,7 +133,7 @@
   bottom: 20%;
 }
 
-.animated-stairs .control-panel .bar {
+.bar {
   width: 360px;
   height: 5px;
 
@@ -143,7 +143,7 @@
   border-radius: 5px;
 }
 
-.animated-stairs .control-panel .bar .slider {
+.slider {
   position: absolute;
 
   width: 20px;
@@ -160,12 +160,12 @@
   transition: opacity 0.3s;
 }
 
-.animated-stairs .control-panel .bar .slider.disable {
+.slider.disable {
   opacity: 0;
   pointer-events: none;
 }
 
-.animated-stairs .control-panel .auto-button {
+.auto-button {
   background-color: beige;
 
   font-size: 20px;
@@ -180,12 +180,12 @@
   transition: all 0.3s;
 }
 
-.animated-stairs .control-panel .auto-button.disable {
+.auto-button.disable {
   background-color: gray;
   filter: brightness(0.8);
 }
 
-.animated-stairs .control-panel .go-to-youtube {
+.go-to-youtube {
   position: absolute;
 
   top: 80px;
@@ -205,15 +205,15 @@
     transform: scale(0.5);
   }
 
-  .animated-stairs .stairs {
+  .stairs {
     transform: rotateX(-30deg) rotateY(50deg);
   }
 
-  .animated-stairs .control-panel .bar {
+  .bar {
     display: none;
   }
 
-  .animated-stairs .control-panel .go-to-youtube {
+  .go-to-youtube {
     top: 60px;
     width: 250px;
 
@@ -221,7 +221,7 @@
     font-size: 18px;
   }
 
-  .animated-stairs .control-panel .auto-button {
+  .auto-button {
     margin-left: 0;
   }
 }
